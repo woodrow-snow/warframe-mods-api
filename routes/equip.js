@@ -15,4 +15,9 @@ router.get('/:id', equipControl.getSingle);
  * *********************************************** */
 router.post('/', equipControl.createEquip);
 
+/* ***********************************************
+ * PUT
+ * *********************************************** */
+router.put('/:id', equipControl.updateEquip);
+
 module.exports = router;

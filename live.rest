@@ -74,6 +74,15 @@ Content-Type: application/json
 }
 ###
 
+# equip put request
+put https://warframe-mods-api.onrender.com/equip/6a120b772fc1c22a9d8103e9
+Content-Type: application/json
+
+{
+    "type_name": "test equip put"
+}
+###
+
 # ---------- DELETE requests ----------
 DELETE https://warframe-mods-api.onrender.com/mods/6a11f5652b6c4d95a514185a
 ###

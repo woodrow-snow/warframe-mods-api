@@ -30,10 +30,7 @@ modsModel.createMod = async function (mod) {
 modsModel.updateMod = async function (id, newInfo) {
      const ogMod = await this.getSingle(id);
 
-     // testing
-     console.log(ogMod.toString());
-
-    await getDB().updateOne(
+     await getDB().updateOne(
           { _id: id },
           {
                $set: {

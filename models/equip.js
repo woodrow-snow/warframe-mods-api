@@ -18,4 +18,17 @@ equipModel.createEquip = async function (newE) {
      return await getDB().insertOne(newE);
 };
 
+equipModel.updateEquip = async function (id, info) {
+     await getDB().updateOne(
+          { _id: id },
+          {
+               $set: {
+                    type_name: info.type_name
+               }
+          }
+     );
+
+     return 'Update Successful';
+};
+
 module.exports = equipModel;

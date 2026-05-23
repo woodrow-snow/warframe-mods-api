@@ -48,4 +48,20 @@ controller.createEquip = async function (req, res) {
      }
 };
 
+controller.updateEquip = async function (req, res) {
+     const id = new ObjectId(req.params.id);
+     try {
+          const newInfo = {
+               type_name: utils.toTitleCase(req.body.type_name)
+          };
+
+          const results = await equipModel.updateEquip(id, newInfo);
+          res.status(200).send(results);
+     } catch (err) {
+          console.error(err);
+
+          res.status(500).send({ message: 'Error updating equipment' });
+     }
+};
+
 module.exports = controller;
