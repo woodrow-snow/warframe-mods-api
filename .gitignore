@@ -3,5 +3,5 @@ node_modules
 
 # files
 .env
-data.csv
-data.json
+mod_data.json
+equip_data.json

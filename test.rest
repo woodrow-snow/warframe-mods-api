@@ -5,3 +5,7 @@
 # base route
 get http://localhost:3000
 ###
+
+# mods getAll route
+get http://localhost:3000/mods
+###

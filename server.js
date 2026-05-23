@@ -24,7 +24,7 @@ mongo.initDB((err) => {
         console.log(err);
     } else {
         app.listen(port, () => {
-            console.log('API started on: ' + port);
+            console.log('Connected to DB and API started on: ' + port);
         });
     }
 });
