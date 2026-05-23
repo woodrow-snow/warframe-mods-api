@@ -64,4 +64,17 @@ controller.updateEquip = async function (req, res) {
      }
 };
 
+controller.deleteEquip = async function (req, res) {
+     const id = new ObjectId(req.params.id);
+
+     try {
+          const results = await equipModel.deleteEquip(id);
+          res.status(200).send(results);
+     } catch (err) {
+          console.error(err);
+
+          res.status(500).send({message:"error occurred while attempting delete operation."})
+     }
+}
+
 module.exports = controller;

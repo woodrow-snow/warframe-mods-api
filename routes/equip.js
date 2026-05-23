@@ -20,4 +20,9 @@ router.post('/', equipControl.createEquip);
  * *********************************************** */
 router.put('/:id', equipControl.updateEquip);
 
+/* ***********************************************
+ * DELETE
+ * *********************************************** */
+router.delete('/:id', equipControl.deleteEquip);
+
 module.exports = router;
