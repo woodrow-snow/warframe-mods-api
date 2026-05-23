@@ -12,11 +12,12 @@ app.use(express.json());
 /* ***********************************************
  * Routes
  * *********************************************** */
+app.use('/', require('./routes'));
 
 /* ***********************************************
  * Starting server
  * *********************************************** */
-const port = provess.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 mongo.initDB((err) => { 
     if (err) {
