@@ -102,3 +102,36 @@ DELETE http://localhost:3000/mods/6a11f5652b6c4d95a514185a
 # delete equip
 delete http://localhost:3000/equip/6a120b772fc1c22a9d8103e9
 ###
+
+
+
+# * ***********************************************
+# * Personal Testing
+# * *********************************************** */
+post http://localhost:3000/mods
+Content-Type: application/json
+
+{
+    "name": "Validation Testing POST",
+    "copies": 1,
+    "c_rank": 0,
+    "max_rank": 3,
+    "equip_id": "warframe",
+    "rarity": "Rare",
+    "in_set": "no"
+}
+###
+
+put http://localhost:3000/mods/6a1225c124e1d3b0fd7c76bb
+Content-Type: application/json
+
+{
+    "name": "Validation Testing PUT",
+    "copies": 2,
+    "c_rank": 2,
+    "max_rank": 5,
+    "equip_id": "robotic",
+    "rarity": "common",
+    "in_set": "yes"
+}
+###

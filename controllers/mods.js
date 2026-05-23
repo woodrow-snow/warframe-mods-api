@@ -48,7 +48,8 @@ mods.createMod = async function (req, res) {
 
           //  Handling equip_id
           const equip_type = req.body.equip_id.toLowerCase();
-          const equip_exist = await utils.checkForEquipType(equip_type);
+        const equip_exist = await utils.checkForEquipType(equip_type);
+         console.log(equip_exist);
 
           if (equip_exist) {
                const equips = await equipModel.getAll();

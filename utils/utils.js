@@ -4,15 +4,15 @@ const equipModel = require('../models/equip');
 utils.checkForEquipType = async function (ui_type) {
      // getting all equips from db
      const equips = await equipModel.getAll();
-     let doesExist = true;
+     let doesExist = false;
 
-     equips.forEach((e) => {
-          if (e.type_name.toLowerCase() != ui_type.toLowerCase()) {
-               doesExist = false;
-          } else {
+     for (let i = 0; i < equips.length; i++) {
+          if (equips[i].type_name === this.toTitleCase(ui_type)) {
                doesExist = true;
+               break;
           }
-     });
+     }
+
 
      return doesExist;
 };
