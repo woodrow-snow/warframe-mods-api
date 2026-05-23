@@ -1,40 +1,38 @@
 /* ***********************************************
- * required Statements
- * *********************************************** */
+ * required Statements
+ * *********************************************** */
 const express = require('express');
 const mongo = require('./database/database');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDoc = require('./swagger_output.json');
 const cors = require('cors');
 
-
 // creating applicaiton
 const app = express();
 
 /* ***********************************************
- * Middleware
- * *********************************************** */
+ * Middleware
+ * *********************************************** */
 app.use(express.json());
 app.use(cors());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
-
 /* ***********************************************
- * Routes
- * *********************************************** */
+ * Routes
+ * *********************************************** */
 app.use('/', require('./routes'));
 
 /* ***********************************************
- * Starting server
- * *********************************************** */
+ * Starting server
+ * *********************************************** */
 const port = process.env.PORT || 3000;
 
-mongo.initDB((err) => { 
-    if (err) {
-        console.log(err);
-    } else {
-        app.listen(port, () => {
-            console.log('Connected to DB and API started on: ' + port);
-        });
-    }
+mongo.initDB((err) => {
+     if (err) {
+          console.log(err);
+     } else {
+          app.listen(port, () => {
+               console.log('Connected to DB and API started on: ' + port);
+          });
+     }
 });
