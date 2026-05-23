@@ -9,11 +9,11 @@ if (process.env.ENV_TYPE != "dev") {
             title: 'Warframe Mods API - CSE341 - Weeks 3 & 4',
             description: 'This warframe mods api was built for cse341 weeks 3 & 4'
         },
-        host: 'localhost:3000',
+        host: 'warframe-mods-api.onrender.com',
         schemes: ['https'],
         servers: [
             {
-              url: ''
+              url: 'https://warframe-mods-api.onrender.com'
             }
         ]
     };  
