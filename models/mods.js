@@ -20,4 +20,11 @@ modsModel.getSingle = async function (modId) {
     return await getDB().findOne({ _id: modId })
 }
 
+/* ***********************************************
+ * creates a new mod in db
+ * *********************************************** */
+modsModel.createMod = async function (mod) {
+    return await getDB().insertOne(mod);
+}
+
 module.exports = modsModel;

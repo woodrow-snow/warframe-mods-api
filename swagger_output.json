@@ -29,9 +29,111 @@
             "description": ""
           }
         }
+      },
+      "post": {
+        "description": "Creates a new mod to add to the database. If you have an equipment type, please use the name of the equipment instead of the id in the equip_id field. The server will handle that part.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "_id": {
+                  "example": "any"
+                },
+                "copies": {
+                  "example": "any"
+                },
+                "c_rank": {
+                  "example": "any"
+                },
+                "max_rank": {
+                  "example": "any"
+                },
+                "rarity": {
+                  "example": "any"
+                },
+                "in_set": {
+                  "example": "any"
+                },
+                "equip_id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/mods/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/equip/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type_name": {
+                  "example": "any"
+                },
+                "_id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/equip/{id}": {
       "get": {
         "description": "",
         "parameters": [

@@ -6,4 +6,6 @@ router.get('/', (req, res) => {
 
 router.use('/mods', require('./mods'));
 
+router.use('/equip', require('./equip'));
+
 module.exports = router;
