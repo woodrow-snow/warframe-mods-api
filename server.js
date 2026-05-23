@@ -5,6 +5,7 @@ const express = require('express');
 const mongo = require('./database/database');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDoc = require('./swagger_output.json');
+const cors = require(cors);
 
 
 // creating applicaiton
@@ -14,6 +15,7 @@ const app = express();
  * Middleware
  * *********************************************** */
 app.use(express.json());
+app.use(cors);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 

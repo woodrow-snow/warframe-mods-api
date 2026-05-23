@@ -13,3 +13,19 @@ get http://localhost:3000/mods
 # mods getSingle route
 get http://localhost:3000/mods/6a11c84aa38b552ba7ddee06
 ###
+
+# * ***********************************************
+# * For Live Testing
+# * ***********************************************
+
+# base route
+get https://warframe-mods-api.onrender.com
+###
+
+# mods getAll route
+get https://warframe-mods-api.onrender.com/mods
+###
+
+# mods getSingle route
+get https://warframe-mods-api.onrender.com/mods/6a11c84aa38b552ba7ddee06
+###
