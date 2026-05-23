@@ -70,7 +70,7 @@ const putModValidationRules = () => {
                .withMessage('max_rank can only be 2 digits big'),
             //    .isNumeric()
             //    .withMessage('max_rank must be number only'),
-          body('rarity').trim().isAlpha().withMessage('rarity must be letters only'),
+          body('rarity').trim(),
           body('in_set')
                .trim()
             //    .isIn(['yes', 'no'])
