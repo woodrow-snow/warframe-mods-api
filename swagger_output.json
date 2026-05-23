@@ -93,6 +93,52 @@
             "description": ""
           }
         }
+      },
+      "put": {
+        "description": "Updates a mod in the database. Please remove lines that you don",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "copies": {
+                  "example": "any"
+                },
+                "c_rank": {
+                  "example": "any"
+                },
+                "max_rank": {
+                  "example": "any"
+                },
+                "rarity": {
+                  "example": "any"
+                },
+                "in_set": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/equip/": {

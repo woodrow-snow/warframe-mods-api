@@ -76,4 +76,34 @@ mods.createMod = async function(req,res) {
     } 
 }
 
+mods.updateMod = async function (req, res) {
+    const modId = new ObjectId(req.params.id);
+
+    // testing
+    console.log('In update mod method');
+
+    try {
+        // testing
+        console.log(`name ${req.body.name}`);
+
+        const updatedInfo = {
+            name: req.body.name,
+            copies: req.body.copies,
+            c_rank: req.body.c_rank,
+            max_rank: req.body.max_rank,
+            rarity: req.body.rarity,
+            in_set: req.body.in_set,
+        }
+
+        // updating entry in db
+        const results = await modsModel.updateMod(modId, updatedInfo);
+        res.status(200).send(results);
+
+    } catch (err) {
+        console.error(err);
+
+        res.status(500).send({ message: "Error updating mod" });
+    }
+}
+
 module.exports = mods;

@@ -64,3 +64,15 @@ Content-Type: application/json
     "type_name":"asdf"
 }
 ###
+
+# ---------- PUT requests ----------
+# mod put request
+put http://localhost:3000/mods/6a11f5652b6c4d95a514185a
+Content-Type: application/json
+
+{
+    "name": "Afterburner-testput"
+}
+###
+
+# deleted id: 6a11e844bc548bdad1f959b3

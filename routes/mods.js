@@ -16,4 +16,13 @@ router.post(
     // #swagger.description = 'Creates a new mod to add to the database. If you have an equipment type, please use the name of the equipment instead of the id in the equip_id field. The server will handle that part.'
     modsControl.createMod);
 
+
+/* ***********************************************
+ * PUT
+ * *********************************************** */
+router.put('/:id',
+    // #swagger.description = 'Updates a mod in the database. Please remove lines that you don't want to update.'
+    modsControl.updateMod
+);
+
 module.exports = router;
