@@ -9,3 +9,7 @@ get http://localhost:3000
 # mods getAll route
 get http://localhost:3000/mods
 ###
+
+# mods getSingle route
+get http://localhost:3000/mods/6a11c84aa38b552ba7ddee06
+###

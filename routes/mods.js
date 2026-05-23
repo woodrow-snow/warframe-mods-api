@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const modsControl = require('../controllers/mods');
 
-router.use('/', modsControl.getAll);
+/* ***********************************************
+ * GET
+ * *********************************************** */
+router.get('/', modsControl.getAll);
+
+router.get('/:id', modsControl.getSingle);
 
 module.exports = router;
