@@ -101,4 +101,4 @@ DELETE http://localhost:3000/mods/6a11f5652b6c4d95a514185a
 
 # delete equip
 delete http://localhost:3000/equip/6a120b772fc1c22a9d8103e9
-###d
+###
