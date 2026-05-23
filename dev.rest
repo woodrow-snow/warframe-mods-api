@@ -1,0 +1,66 @@
+# * ***********************************************
+# * For Local Testing
+# * ***********************************************
+
+# ---------- GET requests ----------
+# base route
+get http://localhost:3000
+###
+
+# mods getAll route
+get http://localhost:3000/mods
+###
+
+# mods getSingle route
+get http://localhost:3000/mods/6a11c84aa38b552ba7ddee06
+###
+
+# equip getAll
+get http://localhost:3000/equip
+###
+
+# equip getSingle
+get http://localhost:3000/equip/6a11c687a38b552ba7ddedec
+###
+
+# ---------- POST requests ----------
+# testing post with equip type that exists
+post http://localhost:3000/mods
+Content-Type: application/json
+
+{
+    "_id": "6a11f5652b6c4d95a514185a",
+    "name": "Afterburner",
+    "copies": 1,
+    "c_rank": 0,
+    "max_rank": 3,
+    "equip_id": "Elytron",
+    "rarity": "Rare",
+    "in_set": "no"
+}
+###
+
+# testing post with equip that doesn't exist
+post http://localhost:3000/mods
+Content-Type: application/json
+
+{
+    "_id": "6a11f5652b6c4d95a514185a",
+    "name": "Afterburner",
+    "copies": 1,
+    "c_rank": 0,
+    "max_rank": 3,
+    "equip_id": "asdf",
+    "rarity": "Rare",
+    "in_set": "no"
+}
+###
+
+# equip create without ID
+post http://localhost:3000/equip
+Content-Type: application/json
+
+{
+    "type_name":"asdf"
+}
+###
