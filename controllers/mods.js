@@ -5,14 +5,24 @@ const equipModel = require('../models/equip');
 const utils = require('../utils/utils');
 
 mods.getAll = async function (req, res) {
-     const data = await modsModel.getAll();
-     utils.returnData(res, data, 'get');
+     try {
+          const data = await modsModel.getAll();
+          utils.returnData(res, data, 'get');
+     } catch (err) {
+          console.error(err);
+          res.status(500).send('Error getting all mods');
+     }
 };
 
 mods.getSingle = async function (req, res) {
      const modId = new ObjectId(req.params.id);
-     const data = await modsModel.getSingle(modId);
-     utils.returnData(res, data, 'get');
+     try {
+          const data = await modsModel.getSingle(modId);
+          utils.returnData(res, data, 'get');
+     } catch (err) {
+          console.error(err);
+          res.status(500).send('Error getting mod');
+     }
 };
 
 mods.createMod = async function (req, res) {
@@ -48,8 +58,8 @@ mods.createMod = async function (req, res) {
 
           //  Handling equip_id
           const equip_type = req.body.equip_id.toLowerCase();
-        const equip_exist = await utils.checkForEquipType(equip_type);
-         console.log(equip_exist);
+          const equip_exist = await utils.checkForEquipType(equip_type);
+          console.log(equip_exist);
 
           if (equip_exist) {
                const equips = await equipModel.getAll();

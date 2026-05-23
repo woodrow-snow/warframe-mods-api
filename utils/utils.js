@@ -13,7 +13,6 @@ utils.checkForEquipType = async function (ui_type) {
           }
      }
 
-
      return doesExist;
 };
 

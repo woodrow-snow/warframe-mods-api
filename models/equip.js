@@ -33,6 +33,6 @@ equipModel.updateEquip = async function (id, info) {
 
 equipModel.deleteEquip = async function (id) {
      return await getDB().deleteOne({ _id: id });
-}
+};
 
 module.exports = equipModel;

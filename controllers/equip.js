@@ -4,14 +4,25 @@ const equipModel = require('../models/equip');
 const utils = require('../utils/utils');
 
 controller.getAll = async function (req, res) {
-     const data = await equipModel.getAll();
-     utils.returnData(res, data, 'get');
+     try {
+          const data = await equipModel.getAll();
+          utils.returnData(res, data, 'get');
+     } catch (err) {
+          console.error(err);
+          res.status(500).send({ message: 'Error getting all equips' });
+     }
 };
 
 controller.getSingle = async function (req, res) {
      const eId = new ObjectId(req.params.id);
-     const data = await equipModel.getSingle(eId);
-     utils.returnData(res, data, 'get');
+
+     try {
+          const data = await equipModel.getSingle(eId);
+          utils.returnData(res, data, 'get');
+     } catch (err) {
+          res.status(500).send({ message: 'Error getting equip' });
+          console.error(err);
+     }
 };
 
 controller.createEquip = async function (req, res) {
@@ -73,8 +84,8 @@ controller.deleteEquip = async function (req, res) {
      } catch (err) {
           console.error(err);
 
-          res.status(500).send({message:"error occurred while attempting delete operation."})
+          res.status(500).send({ message: 'error occurred while attempting delete operation.' });
      }
-}
+};
 
 module.exports = controller;

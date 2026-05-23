@@ -22,8 +22,8 @@ router.post('/', equipValidationRules(), validate, equipControl.createEquip);
 router.put('/:id', equipValidationRules(), validate, equipControl.updateEquip);
 
 /* ***********************************************
- * DELETE
- * *********************************************** */
+ * DELETE
+ * *********************************************** */
 router.delete('/:id', equipControl.deleteEquip);
 
 module.exports = router;
