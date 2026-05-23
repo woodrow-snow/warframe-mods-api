@@ -1,18 +1,31 @@
 const swaggerAutogen = require("swagger-autogen")();
+require('dotenv').config();
 
-const doc = {
-  info: {
-    title: 'Warframe Mods API - CSE341 - Weeks 3 & 4',
-    description: 'This warframe mods api was built for cse341 weeks 3 & 4'
-    },
-  host: 'localhost:3000',
-//   schemes: ['http'],
-//   servers: [
-//     {
-//       url: 'https://cse341-contacts-api-n92e.onrender.com'
-//     }
-//   ]
-};
+let doc;
+
+if (process.env.ENV_TYPE != "dev") {
+    doc = {
+        info: {
+            title: 'Warframe Mods API - CSE341 - Weeks 3 & 4',
+            description: 'This warframe mods api was built for cse341 weeks 3 & 4'
+        },
+        host: 'localhost:3000',
+        schemes: ['https'],
+        servers: [
+            {
+              url: ''
+            }
+        ]
+    };  
+} else {
+    doc = {
+        info: {
+            title: 'Warframe Mods API - CSE341 - Weeks 3 & 4',
+            description: 'This warframe mods api was built for cse341 weeks 3 & 4'
+        },
+        host: 'localhost:3000',
+    };
+}
 
 const outputFile = './swagger_output.json';
 const routes = ['./routes/index.js'];
