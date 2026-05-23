@@ -51,4 +51,8 @@ modsModel.updateMod = async function (id, newInfo) {
     return "Update Successful";
 }
 
+modsModel.deleteMod = async function (id) {
+    return await getDB().deleteOne({ _id: id });
+}
+
 module.exports = modsModel;

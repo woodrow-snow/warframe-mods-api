@@ -78,14 +78,7 @@ mods.createMod = async function(req,res) {
 
 mods.updateMod = async function (req, res) {
     const modId = new ObjectId(req.params.id);
-
-    // testing
-    console.log('In update mod method');
-
     try {
-        // testing
-        console.log(`name ${req.body.name}`);
-
         const updatedInfo = {
             name: req.body.name,
             copies: req.body.copies,
@@ -103,6 +96,20 @@ mods.updateMod = async function (req, res) {
         console.error(err);
 
         res.status(500).send({ message: "Error updating mod" });
+    }
+}
+
+mods.deleteMod = async function (req, res) {
+    const modId = new ObjectId(req.params.id);
+    
+    try {
+        const results = await modsModel.deleteMod(modId);
+        res.status(200).send(results);
+        
+    } catch(err) {
+        console.error(err);
+
+        res.status(500).send({ message: 'Error occurred while attempting delete operation' });
     }
 }
 

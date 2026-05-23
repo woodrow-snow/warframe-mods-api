@@ -25,4 +25,9 @@ router.put('/:id',
     modsControl.updateMod
 );
 
+/* ***********************************************
+ * DELETE
+ * *********************************************** */
+router.delete('/:id', modsControl.deleteMod);
+
 module.exports = router;

@@ -75,4 +75,6 @@ Content-Type: application/json
 }
 ###
 
-# deleted id: 6a11e844bc548bdad1f959b3
+# ---------- DELETE requests ----------
+DELETE http://localhost:3000/mods/6a11f5652b6c4d95a514185a
+###

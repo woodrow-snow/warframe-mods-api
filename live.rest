@@ -63,3 +63,17 @@ Content-Type: application/json
     "type_name":"asdf"
 }
 ###
+
+# ---------- PUT requests ----------
+# mod put request
+put https://warframe-mods-api.onrender.com/mods/6a11f5652b6c4d95a514185a
+Content-Type: application/json
+
+{
+    "name": "Afterburner-testput"
+}
+###
+
+# ---------- DELETE requests ----------
+DELETE https://warframe-mods-api.onrender.com/mods/6a11f5652b6c4d95a514185a
+###
