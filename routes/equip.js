@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const equipControl = require('../controllers/equip');
+const { equipValidationRules, validate } = require('../validation/validator');
 
 // --- DEV NOTE: need to create getAll, getSingle, and post for equipment ---
 
@@ -13,12 +14,12 @@ router.get('/:id', equipControl.getSingle);
 /* ***********************************************
  * POST
  * *********************************************** */
-router.post('/', equipControl.createEquip);
+router.post('/', equipValidationRules(), validate, equipControl.createEquip);
 
 /* ***********************************************
  * PUT
  * *********************************************** */
-router.put('/:id', equipControl.updateEquip);
+router.put('/:id', equipValidationRules(), validate, equipControl.updateEquip);
 
 /* ***********************************************
  * DELETE

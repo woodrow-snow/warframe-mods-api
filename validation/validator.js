@@ -1,5 +1,8 @@
 const { body, validationResult } = require('express-validator');
 
+/* ***********************************************
+ * mod rules
+ * *********************************************** */
 const addModValidationRules = () => {
     return [
         body('name')
@@ -82,6 +85,20 @@ const putModValidationRules = () => {
     ]
 }
 
+/* ***********************************************
+ * equip rules
+ * *********************************************** */
+const equipValidationRules = () => {
+    return [
+        body('type_name')
+            .trim()
+            .notEmpty()
+            .withMessage("type_name cannot be empty")
+            .isString()
+            .withMessage('type_name must be a string')
+    ]
+}
+
 const validate = (req, res, next) => {
     const errors = validationResult(req);
     if (errors.isEmpty()) {
@@ -99,4 +116,5 @@ module.exports = {
     addModValidationRules,
     validate,
     putModValidationRules,
+    equipValidationRules,
 }
