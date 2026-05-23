@@ -1,0 +1,15 @@
+{
+  "name": "warframe-mods-api",
+  "version": "1.0.0",
+  "description": "There are many mods in the Digital Extreme game \"Warframe\". This API is meant to help you keep track of the ones you have accquired and retrive information about them.",
+  "license": "ISC",
+  "author": "Woodrow Snow",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
