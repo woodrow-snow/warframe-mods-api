@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const equipControl = require('../controllers/equip');
-const { equipValidationRules, validate } = require('../validation/validator');
+const { equipValidationRules, validate } = require('../middleware/validator');
 
 // --- DEV NOTE: need to create getAll, getSingle, and post for equipment ---
 
